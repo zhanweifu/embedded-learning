@@ -9,5 +9,4 @@ int main(void){
     if(b==42) printf("%f",f=a*c);
     if(b==47) printf("%f",f=a/c);
     return 0;
-    return 0;
 }
