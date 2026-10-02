@@ -6,6 +6,7 @@ int main(void){
     int score;
     scanf("%d",&score);
     switch(score/10){
+        case 10:printf("%d SSS",score);break;
         case 9: printf("%d A+",score);break;
         case 8: printf("%d B",score);break;
         case 7: printf("%d C",score);break;
@@ -17,6 +18,6 @@ int main(void){
         case 1: printf("%d 区",score);break;
         default:printf("error happen");
     }
-
+    return 0;
 }
 
