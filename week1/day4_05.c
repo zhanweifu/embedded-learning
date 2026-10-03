@@ -1,6 +1,20 @@
 #include<stdio.h>
 int main(void){
-    printf("  *  \n * * \n*****\n\n\n");
-    printf("*****\n * * \n  *  ");
+    int a,b,c,d;
+    scanf("%d",&d);
+    for(a=d;a>=0;){
+        for(b=1;b<=d-a;b++)
+        printf(" ");
+        for(c=1;c<=2*a-1;c++)
+        printf("*");
+    printf("\n"),a--;
+    }
+    for(a=1;a<=d;){
+        for(b=1;b<=d-a;b++)
+        printf(" ");
+        for(c=1;c<=2*a-1;c++)
+        printf("*");
+    printf("\n"),a++;
+    }
     return 0;
 }

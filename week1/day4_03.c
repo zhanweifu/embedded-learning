@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(void){
-    int a,b,c;
+    long long int a,b,c;
     scanf("%d",&a);
     b=1,c=1;
     for(;b<=a;b++)
