@@ -9,6 +9,7 @@ int main(void){
                 case blank:state=press_;break;
                 case press_:printf("on\n");state=press;break;
                 case press:break;
+                case blank_:state=press;break;
             }
         }else if(a=='1'){
             switch(state){
