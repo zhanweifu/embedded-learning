@@ -13,7 +13,7 @@ int main(void){
                                 {if(b==43) printf("%f\n",f=a+c);
                                 if(b==45) printf("%f\n",f=a-c);
                                 if(b==42) printf("%f\n",f=a*c);
-                                if(b==47,c!=0) printf("%f\n",f=a/c);}break;
+                                if(b==47&&c!=0) printf("%f\n",f=a/c);}break;
                 case close:state=wait;break;
             }
         }

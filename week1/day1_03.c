@@ -10,7 +10,7 @@ int main(void){
         break;}
     b++;
     }
-    if(c==1) printf("%d不是素数",a);
+    if(c==1||a==0||a==1) printf("%d不是素数",a);
     else printf("%d是素数",a);
     return 0;
 }

@@ -9,4 +9,6 @@ int main(void){
         m=m/10;
     }
     if(re==n)printf("%d is hui",n);
+    else printf("no");
+    return 0;
 }

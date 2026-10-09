@@ -6,10 +6,10 @@ int main(void){
     while((a=getchar())!='q'){
         if(a=='r'){
             switch(state){
-                case green:state=yellow_red;printf("yellow");break;
-                case yellow_green:state=green;printf("green");break;
-                case yellow_red:state=red;printf("red");break;
-                case red:state=yellow_green;printf("yellow");break;
+                case green:state=yellow_red;printf("yellow\n");break;
+                case yellow_green:state=green;printf("green\n");break;
+                case yellow_red:state=red;printf("red\n");break;
+                case red:state=yellow_green;printf("yellow\n");break;
             }
         }
     }return 0;

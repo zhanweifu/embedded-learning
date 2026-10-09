@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main(void){
     int x,a,b,c;
-    for(x=99;x<=999;x++){
+    for(x=100;x<=999;x++){
         a=x%10;
         b=(x/10)%10;
         c=x/100;

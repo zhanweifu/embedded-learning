@@ -7,14 +7,16 @@ int main(void){
         printf(" ");
         for(c=1;c<=2*a-1;c++)
         printf("*");
-    printf("\n"),a++;
+    printf("\n");
+    a++;
     }
-    for(a=d;a>=1;){
+    for(a=d-1;a>=1;){
         for(b=1;b<=d-a;b++)
         printf(" ");
         for(c=1;c<=2*a-1;c++)
         printf("*");
-    printf("\n"),a--;
+    printf("\n");
+    a--;
     }
     return 0;
 }
