@@ -1,8 +1,8 @@
 #include<stdio.h>
 int main(void){
     int x,i;
-    scanf("%d",&x);
     i=0;
+    scanf("%d",&x);
     while(x!=0){
         x&=(x-1);
         i++;

@@ -14,9 +14,9 @@ int main(void){
         }else if(a=='1'){
             switch(state){
                 case blank:break;
-                case press_:state=blank;break;
+                case press_:printf("off\n");state=blank;break;
                 case press:state=blank_;break;
-                case blank_:state=blank;break;
+                case blank_:printf("off\n");state=blank;break;
             }
         }
     }return 0;

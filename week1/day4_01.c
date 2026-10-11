@@ -13,4 +13,5 @@ int main(void){
         if(x==47&&b==0) printf("除数不能为0\n");
         scanf(" %c",&d);
     }
+    return 0;
 }
