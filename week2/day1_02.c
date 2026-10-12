@@ -1,9 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 int is_even(int n){
-    int a;
-    a=(a&n);
-    return(a);
+    return(n&1);
 }
 int main(void){
     system("chcp 65001");

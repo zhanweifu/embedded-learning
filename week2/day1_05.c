@@ -16,9 +16,10 @@ int mul(int a,int b){
 }
 int div(int a,int b){
     int c;
-    if(b!=0) c=a/b;
-    else printf("no 0");
-    return(c);
+    if(b!=0) {
+        c=a/b;
+        return(c);}
+    else return(0);
 }
 int main(void){
     int q,w;
