@@ -15,6 +15,7 @@ int main(void){
     int n=sizeof(a)/sizeof(a[0]);
     bubblesort(a,n);
     for(int i=0;i<n;i++){
-    printf("%d ",a[i]);
+        printf("%d ",a[i]);
     }
+    return 0;
 }

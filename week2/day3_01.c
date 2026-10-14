@@ -11,7 +11,7 @@ for (int i=0; i<=7; i++){
     sum+=a[i];
     if(a[i]>max) max=a[i];
     if(a[i]<min) min=a[i];}
-ave=(sum/7.0);
+ave=(sum/(sizeof(a)/sizeof(a[0])));
 printf("%d\n%d\n%d\n%f\n", sum, max, min,ave);
 return 0;
 }
