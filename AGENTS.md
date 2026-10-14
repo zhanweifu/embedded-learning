@@ -33,7 +33,6 @@ Git：已配置 `post-commit` 钩子，**commit 后自动 push** 到 GitHub。�
 | **突击** | 从已学范围随机抽 5 个知识点提问，用户答完再点评。 |
 | **帮我看代码** | 读 `weekN/` 下相关 `.c`，逐条指出问题并给修改建议，不直接代写。 |
 | **可以实操了** | 启用《第 1.5 阶段：硬件与物理层》（00_主计划.md），排 4 周插在第 8 周之后，后续周次顺延；同步更新 `01_环境与硬件清单.md` 的采购清单。 |
-| **收工**（=本次对话结束） | 1) 先读 `07_陪练人设.md`；2) 用一句话总结本次对话我俩的互动风格；3) 给五个维度各评 0~1 分（温柔/严格/简洁/幽默/耐心），运行 `python 工具/persona.py log --summary "..." --warm . --strict . --concise . --humor . --patience .`，让性格缓慢演化；4) `git add -A && git commit`。 |
 
 ## 三、通用约定
 
@@ -59,20 +58,6 @@ Git：已配置 `post-commit` 钩子，**commit 后自动 push** 到 GitHub。�
 
 ---
 
-## 五、陪练人设继承系统（v1，2026-10-14 起）
-
-**开机规则（每次新对话第一件事）**：先读 `07_陪练人设.md`，按里面的《行为指引》说话。它是自动生成的，别手改。
-
-**原理**：纯程序无法判断对话的情绪，所以分工是——
-- **AI = 传感器**：每次对话结束评估风格，给 0~1 分。
-- **程序 = 记忆 + 渐进器**：`工具/persona.py` 用指数移动平均(EMA，alpha=0.3)吸收新分，变化慢。
-- **文件 = 继承**：人设存在 `07_陪练人设.md`（我每次读），流水在 `人设历史.md`，状态在 `人设.json`。
-
-**常用命令**：
-```bash
-python 工具/persona.py show                 # 看当前人设
-python 工具/persona.py log --summary "..." --warm 0.8 --strict 0.4 --concise 0.6 --humor 0.3 --patience 0.9
-python 工具/persona.py setcore "新的核心设定"  # 改核心，比如换称呼
-python 工具/persona.py history 5             # 看最近几次
-```
+> **人格系统已升级为全局**（不再属于本项目）：见 `C:\Users\hp\.pi\agent\AGENTS.md`
+> 与 `C:\Users\hp\.pi\agent\persona\persona.py`。说「收工」即可演化，跨项目统一生效。
 
