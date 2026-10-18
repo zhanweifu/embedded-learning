@@ -40,10 +40,10 @@ int rb_get(ringbuf_t *rb, unsigned char *out){
          return 1;
     }
 }
-/* 已存元素个数：head - tail，绕圈时补一个 size，再用 % 收回范围。中间量必须是 int */
-int rb_count(ringbuf_t *rb){
+    int rb_count(ringbuf_t *rb){
     if(rb==NULL) return 0;
-    return (rb->head - rb->tail + rb->size) % rb->size;
+    int n=((rb->head-rb->tail+rb->size)%rb->size);
+    return (n);
 }
 int main(void){
     system("chcp 65001");
@@ -68,13 +68,24 @@ int main(void){
         if (rb_get(&h001, &ch)) printf("取到 %d\n", ch);
         else printf("空了\n");
     }
-    printf("count=%d\n\n",rb_count(&h001));
-
-    /* Day6 测试1：连塞 9 个（容量只有 7），看后 2 个是否被拒 */
-    printf("--- 测试1：连塞 9 个 ---\n");
-    for(int i=1;i<=9;i++){
-        int ok = rb_put(&h001, (unsigned char)i);
-        printf("put %d -> %s  (count=%d)\n", i, ok?"成功":"满了被拒", rb_count(&h001));
+    rb_init(&h001);
+    for (int y = 0; y < 9; y++) {
+        int ok = rb_put(&h001, (unsigned char)y);
+        printf("put %d -> %s (count=%d)\n", y, ok ? "成功" : "满了被拒", rb_count(&h001));
     }
+    unsigned char po = 0xAA;        /* 170，一个绝不会等于数据的值 */
+    rb_init(&h001);
+    if (rb_get(&h001, &po)) printf("竟然取到了？\n");
+    else printf("空取被拒,po 还是 %d\n", po);   /* 应该是 170，不是垃圾值 */
+    rb_put(&h001,1);
+    rb_put(&h001,2);
+    rb_put(&h001,3);
+    unsigned char rt;
+    for(int m=4;m<h001.size;m++){
+        rb_put(&h001,m);
+        if (rb_get(&h001, &rt)) printf("取出 %d\n", rt);
+        else printf("空了\n");
+    }
+    printf("%d",rb_count(&h001));
     return 0;
 }
