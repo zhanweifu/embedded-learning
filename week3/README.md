@@ -1,0 +1,33 @@
+# week3 · 第 3 周代码
+
+> 时间：2026/10/19（周一）~ 10/25（周日）
+> 主题：指针（上）—— 地址与 `&`/`*`、指针做参数、指针运算、指针与数组、字符指针与字符串
+> 课程任务：`周任务/第3周任务.md`
+> **全部在 PC 上用 gcc 跑通，不需要任何硬件。**
+
+---
+
+## 文件命名规则
+
+```
+week3/dayM_XX.c      M = 第几天（1~7），XX = 当天第几个程序
+```
+
+例：`week3/day2_01.c` = 第 3 周第 2 天（指针做参数）的第 1 个练习（指针版 swap）。
+
+## 本周核心产物
+
+- `week3/strlib.c` + `week3/strlib.h` —— 手写字符串库（`my_strlen`/`my_strcpy`/`my_strcmp`/`my_strcat`/`my_strchr`）
+- `week3/test_strlib.c` —— 测试 `main`，含空串/单字符/长串/边界
+
+编译命令：
+
+```bash
+gcc -Wall -Wextra strlib.c test_strlib.c -o test_strlib.exe
+./test_strlib.exe
+```
+
+## 本周规矩（写在最前面）
+
+**写任何函数之前，先写一行注释：「返回 1 代表什么」。**
+第 2 周的 `is_even` / `is_prime` 连着三轮打架，全因为这一句没定。
