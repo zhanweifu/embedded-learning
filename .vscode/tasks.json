@@ -1,0 +1,81 @@
+{
+    // LShift+B = 编「当前打开的这个 .c」，并打开 -Wall -Wextra
+    // 需要连 strlib.c 一起编时：Ctrl+Shift+B 选第二个任务「gcc: strlib 测试」
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "gcc: 生成活动文件（含 -Wall -Wextra）",
+            "command": "E:\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "只编当前文件。strlib 相关请用下一个任务。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "gcc: strlib 测试（strlib.c + test_strlib.c）",
+            "command": "E:\\x86_64-8.1.0-release-posix-seh-rt_v6-rev0\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "strlib.c",
+                "test_strlib.c",
+                "-o",
+                "test_strlib.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "两个 .c 一起编，专门给 strlib 用。"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: cl.exe 生成活动文件",
+            "command": "cl.exe",
+            "args": [
+                "/Zi",
+                "/EHsc",
+                "/nologo",
+                "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "detail": "调试器生成的任务（用不上，留着占位）。"
+        }
+    ],
+    "version": "2.0.0"
+}
