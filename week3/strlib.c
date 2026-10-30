@@ -41,3 +41,13 @@ char *my_strcat(char *dst,const char *src){     //返回值代表衔接好src的
     *dst = *src;
     return ret;
 }
+
+char *my_strchr(const char *s, char c) {
+    if (!s) return NULL;
+    while(*s){
+        if(*s==c) return (char *)s;
+        s++;
+    }
+    if(*s==c) return (char *)s;
+    else return NULL;
+}
