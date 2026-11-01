@@ -14,7 +14,6 @@ int main(void){
     int *p = NULL;  //似乎是崩溃了
     if (p) *p = 5;
     show("null",NULL);
-    printf("%zu %zu %zu\n", sizeof(int*), sizeof(char*), sizeof(int));
-    printf("%d\n", p);   //这是故意练 warning 的
+    printf("%u %u %u\n", (unsigned)sizeof(int*), (unsigned)sizeof(char*), (unsigned)sizeof(int));
     return 0;
 }

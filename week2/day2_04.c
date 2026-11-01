@@ -1,7 +1,6 @@
 #include<stdio.h>
 int is_prime(int n){
-    int b,c;
-    c=0;
+    int b;
     if(n<2) return 0;
     for(b=2;b<=(n/2);b++)
         if((n%b)==0) return 0;
