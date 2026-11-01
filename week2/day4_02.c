@@ -1,13 +1,14 @@
 #include<stdio.h>
 int main(void){
-    int a[3][4]={{1,56,3,4},{2,24,3,4},{96,2,3,4}};
-    int max=0;
-    int n=sizeof(a)/sizeof(a[0]);
-    int w=sizeof (a[0])/sizeof (a[0][0]);
+    int b[2][2]={{-5,-3},{-9,-1}};
+    int max=b[0][0];
+    int n=sizeof(b)/sizeof(b[0]);
+    int w=sizeof (b[0])/sizeof (b[0][0]);
     for(int i=0;i<n;i++){
         for (int q=0;q<w;q++){
-            if (a[i][q]>max) max=a[i][q];} printf ("%d\n",max);
-        max=0;
+            if (b[i][q]>max) max=b[i][q];}
+
     }
+    printf ("%d\n",max);
     return 0;
 }
