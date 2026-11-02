@@ -1,12 +1,13 @@
 #include<stdio.h>
 int my_is_palindrome(const char* s){
+    if(s==NULL) return 0;   //「NULL 视为不是回文」
     int len=0;
     const char *l=s;
     while(s[len]!='\0'){
         len++;
     }
-    const char *r=s+len-1;
     if (len < 2) return 1;
+    const char *r=s+len-1;
     while (l < r){
     if(*l!=*r) return 0;
     l++;
@@ -23,5 +24,6 @@ int main(void){
     printf("%d\n",my_is_palindrome("abba"));
     printf("%d\n",my_is_palindrome("abcba"));
     printf("%d\n",my_is_palindrome("abca"));
+    printf("%d\n", my_is_palindrome(NULL));
     return 0;
 }
