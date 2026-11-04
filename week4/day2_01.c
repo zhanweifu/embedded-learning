@@ -12,7 +12,7 @@ int main(void){
     const char *cur = "idle"; set_flag(&cur, "busy");
     printf("%s\n",cur);
     int *arr_of_ptr[3];
-    int (*ptr_to_arr)[3];
+    int block[3]={1,2,3}; int (*ptr_to_arr)[3] = &block;
     printf("%I64u\n",sizeof(arr_of_ptr));      //3个指针大小
     printf("%I64u\n",sizeof(ptr_to_arr));      //一个指针的大小
     return 0;

@@ -4,8 +4,8 @@ int main(void){
     printf("%d\n",x);       //正常变量
     printf("%p\n",p);       //x的地址   门牌
     printf("%d\n",*p);      //x的内容
-    printf("%d\n",**pp);    //p的内容，即x的内容  门牌
-    printf("%p\n",pp);      //p的地址
+    printf("%d\n",**pp);    //顺着两道门牌摸到的东西
+    printf("%p\n",pp);      //p 这张门牌自己的地址
     **pp = 99;
     printf("%d\n",x);
     return 0;
